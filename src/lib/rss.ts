@@ -7,16 +7,16 @@ type Feed = {
 }
 
 export const FEEDS: Feed[] = [
-  {
-    slug: "vg",
-    title: "VG",
-    url: "https://www.vg.no/rss/feed",
-  },
-  {
-    slug: "nrk",
-    title: "NRK Topp Saker",
-    url: "https://www.nrk.no/toppsaker.rss",
-  },
+  // {
+  //   slug: "vg",
+  //   title: "VG",
+  //   url: "https://www.vg.no/rss/feed",
+  // },
+  // {
+  //   slug: "nrk",
+  //   title: "NRK Topp Saker",
+  //   url: "https://www.nrk.no/toppsaker.rss",
+  // },
   {
     slug: "upwork",
     title: "Upwork US Only",
