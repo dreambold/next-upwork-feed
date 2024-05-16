@@ -30,7 +30,7 @@ export default function Feed({ feed, items }: any) {
     <div>
       {/* <h1 style={{ color: 'green' }} className="font-bold text-5xl mb-12 text-center">{feed.title}</h1> */}
       <div className="min-h-screen flex items-center justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-1 p-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-1 p-5" style={{ padding: '70px' }}>
           {items.map((item: any, index: number) => (
             <a
               key={index}
