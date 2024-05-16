@@ -38,6 +38,7 @@ export default function Feed({ feed, items }: any) {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
+              style={{ height: '300px', overflowX: "hidden" }}
             >
               {item.enclosure?.url && (<img src={item.enclosure.url} alt={item.title} />)}
               <h3 className="font-bold">{item.title}</h3>
