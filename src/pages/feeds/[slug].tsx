@@ -25,10 +25,10 @@ export async function getStaticProps({ params }: any) {
 }
 
 export default function Feed({ feed, items }: any) {
-  // console.log(feed, items)
+  console.log(feed, items)
   return (
     <div>
-      <h1 style={{ color: 'green' }} className="font-bold text-5xl mb-12 text-center">{feed.title}</h1>
+      {/* <h1 style={{ color: 'green' }} className="font-bold text-5xl mb-12 text-center">{feed.title}</h1> */}
       <div className="min-h-screen flex items-center justify-center">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-1 p-5">
           {items.map((item: any, index: number) => (
@@ -41,7 +41,8 @@ export default function Feed({ feed, items }: any) {
             >
               {item.enclosure?.url && (<img src={item.enclosure.url} alt={item.title} />)}
               <h3 className="font-bold">{item.title}</h3>
-              <p style={{ height: '100px', overflowX: 'hidden' }} dangerouslySetInnerHTML={{ __html: item.content }}></p>
+              <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
+              <div>{Math.round((new Date().getTime() - new Date(item.isoDate).getTime()) / (1000 * 60))} minutes ago</div>
             </a>
           ))}
         </div>
