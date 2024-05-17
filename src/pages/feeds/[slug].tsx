@@ -42,7 +42,10 @@ export default function Feed({ feed, items }: any) {
               {item.enclosure?.url && (<img src={item.enclosure.url} alt={item.title} />)}
               <h3 className="font-bold">{item.title}</h3>
               <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
-              <div>{Math.round((new Date().getTime() - new Date(item.isoDate).getTime()) / (1000 * 60))} minutes ago</div>
+              <div>
+                {Math.floor((new Date().getTime() - new Date(item.isoDate).getTime()) / (1000 * 60 * 60 * 24))} Days{' '}
+                {Math.floor((new Date().getTime() - new Date(item.isoDate).getTime()) % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))} Hours{' '}
+                {Math.floor((new Date().getTime() - new Date(item.isoDate).getTime()) % ((1000 * 60 * 60)) / (1000 * 60))} Minutes ago</div>
             </a>
           ))}
         </div>
